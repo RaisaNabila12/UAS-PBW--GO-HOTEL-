@@ -109,7 +109,7 @@ git clone https://github.com/RaisaNabila12/UAS-PBW--GO-HOTEL-.git
 Masuk ke folder project:
 
 ```bash
-cd hotel-reservation
+cd UAS-PBW--GO-HOTEL-
 ```
 
 Install dependency:
