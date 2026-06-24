@@ -1,59 +1,222 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# GO-Hotel - Sistem Reservasi Kamar Hotel Berbasis Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+---
 
-## About Laravel
+## Deskripsi Aplikasi
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+GO-Hotel adalah aplikasi web berbasis Laravel yang digunakan untuk melakukan reservasi kamar hotel secara online.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Aplikasi ini dibuat untuk memudahkan proses pemesanan kamar dengan menyediakan dua jenis pengguna, yaitu **Admin** dan **User**.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Admin memiliki akses untuk mengelola data kamar seperti menambah, mengubah, menghapus data kamar, serta mengatur status kamar. User dapat melihat daftar kamar yang tersedia, melakukan reservasi, melihat riwayat pemesanan, dan membatalkan reservasi.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## Fitur Aplikasi
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Admin
 
-## Laravel Sponsors
+* Login ke sistem
+* Menambah data kamar
+* Mengubah data kamar
+* Menghapus data kamar
+* Upload foto kamar
+* Mengelola status kamar
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### User
 
-### Premium Partners
+* Registrasi akun
+* Login ke sistem
+* Melihat daftar kamar
+* Melakukan reservasi
+* Melihat riwayat reservasi
+* Membatalkan reservasi
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## Teknologi yang Digunakan
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* Laravel
+* PHP
+* MySQL
+* Laravel Breeze
+* Blade
+* Tailwind CSS
+* Vite
+* Alpine.js
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Struktur Modul
 
-## Security Vulnerabilities
+### 1. Modul Autentikasi
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Mengelola proses login dan autentikasi pengguna.
 
-## License
+Fitur:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* Register
+* Login
+* Logout
+* Edit profil
+
+### 2. Modul Manajemen Kamar
+
+Digunakan admin untuk mengelola data kamar.
+
+Fitur:
+
+* Menampilkan daftar kamar
+* Menambah kamar
+* Mengubah kamar
+* Menghapus kamar
+* Upload foto
+
+### 3. Modul Reservasi Kamar
+
+Digunakan user untuk melakukan pemesanan.
+
+Fitur:
+
+* Melihat kamar tersedia
+* Reservasi kamar
+* Menentukan tanggal check-in dan check-out
+* Perubahan status kamar otomatis
+
+### 4. Modul Riwayat Reservasi
+
+Digunakan untuk menampilkan riwayat transaksi pengguna.
+
+Fitur:
+
+* Menampilkan riwayat reservasi
+* Membatalkan reservasi
+
+### 5. Modul Database
+
+Digunakan untuk menyimpan seluruh data aplikasi.
+
+---
+
+## Instalasi
+
+Clone repository:
+
+```bash
+git clone https://github.com/RaisaNabila12/UAS-PBW--GO-HOTEL-.git
+```
+
+Masuk ke folder project:
+
+```bash
+cd hotel-reservation
+```
+
+Install dependency:
+
+```bash
+composer install
+npm install
+```
+
+Copy file environment:
+
+```bash
+cp .env.example .env
+```
+
+Generate application key:
+
+```bash
+php artisan key:generate
+```
+
+Import database `.sql`
+
+Jalankan migration:
+
+```bash
+php artisan migrate
+```
+
+Jalankan aplikasi:
+
+```bash
+php artisan serve
+npm run dev
+```
+
+Buka browser:
+
+```text
+http://127.0.0.1:8000
+```
+
+---
+
+## Struktur Project
+
+```text
+app/
+├── Http/
+│   └── Controllers/
+│       ├── BookingController.php
+│       ├── ProfileController.php
+│       └── Admin/
+│           └── RoomController.php
+
+├── Models/
+│   ├── User.php
+│   ├── Room.php
+│   └── Booking.php
+
+database/
+├── migrations/
+
+resources/
+├── views/
+
+routes/
+├── web.php
+
+storage/
+└── app/public/rooms
+```
+
+---
+
+## Database
+
+Database menggunakan **MySQL**.
+
+Tabel utama yang digunakan:
+
+### users
+
+Menyimpan data akun pengguna.
+
+### rooms
+
+Menyimpan data kamar hotel.
+
+### bookings
+
+Menyimpan data transaksi reservasi.
+
+Relasi:
+
+* User → memiliki banyak booking
+* Room → memiliki banyak booking
+* Booking → dimiliki oleh satu user dan satu room
+
+---
+
+## Pengembang
+
+Nama: *Raisa Nabila*
+
+NPM : 2408107010037
+
+Program Studi: Informatika
+
+Mata Kuliah: Pemrograman Berbasis Web
