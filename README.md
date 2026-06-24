@@ -103,7 +103,7 @@ Digunakan untuk menyimpan seluruh data aplikasi.
 Clone repository:
 
 ```bash
-git clone https://github.com/RaisaNabila12/UAS-PBW--GO-HOTEL.git
+git clone https://github.com/RaisaNabila12/UAS-PBW--GO-HOTEL-.git
 ```
 
 Masuk ke folder project:
