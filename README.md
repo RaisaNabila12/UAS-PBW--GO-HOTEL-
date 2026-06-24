@@ -214,6 +214,9 @@ Relasi:
 ## Pengembang
 
 Nama: *Raisa Nabila*
+
 NPM : 2408107010037
+
 Program Studi: Informatika
+
 Mata Kuliah: Pemrograman Berbasis Web
