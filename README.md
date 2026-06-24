@@ -131,12 +131,22 @@ Generate application key:
 php artisan key:generate
 ```
 
-Import database `.sql`
+Buat database:
 
-Jalankan migration:
+```text
+db_hotel
+```
+
+Import file:
+
+```text
+db_hotel.sql
+```
+
+Hubungkan storage agar gambar dapat ditampilkan:
 
 ```bash
-php artisan migrate
+php artisan storage:link
 ```
 
 Jalankan aplikasi:
@@ -154,16 +164,65 @@ http://127.0.0.1:8000
 
 ---
 
+## Hak Akses Pengguna
+
+### Admin
+
+Gunakan akun admin yang sudah tersedia setelah import database `db_hotel.sql`.
+
+Login Admin:
+
+```text
+Email: admin@gmail.com
+Password: 123456789
+```
+
+Akses halaman:
+
+```text
+/admin/rooms
+```
+
+Fitur:
+
+* Menambah kamar
+* Mengubah data kamar
+* Menghapus kamar
+* Mengelola data kamar
+
+---
+
+### User / Pelanggan
+
+Buat akun baru melalui:
+
+```text
+/register
+```
+
+Akun yang melakukan registrasi otomatis menjadi `user`.
+
+Fitur:
+
+* Melihat daftar kamar
+* Melakukan reservasi
+* Melihat riwayat reservasi
+* Membatalkan reservasi
+
+---
+
 ## Struktur Project
 
 ```text
 app/
 ├── Http/
-│   └── Controllers/
-│       ├── BookingController.php
-│       ├── ProfileController.php
-│       └── Admin/
-│           └── RoomController.php
+│   ├── Controllers/
+│   │   ├── BookingController.php
+│   │   ├── ProfileController.php
+│   │   └── Admin/
+│   │       └── RoomController.php
+│   └── Middleware/
+│       └── AdminMiddleware.php
 
 ├── Models/
 │   ├── User.php
@@ -181,6 +240,8 @@ routes/
 
 storage/
 └── app/public/rooms
+
+db_hotel.sql
 ```
 
 ---
@@ -193,7 +254,7 @@ Tabel utama yang digunakan:
 
 ### users
 
-Menyimpan data akun pengguna.
+Menyimpan data akun pengguna dan hak akses (admin atau user).
 
 ### rooms
 
@@ -213,10 +274,7 @@ Relasi:
 
 ## Pengembang
 
-Nama: *Raisa Nabila*
-
-NPM : 2408107010037
-
-Program Studi: Informatika
-
-Mata Kuliah: Pemrograman Berbasis Web
+Nama: **Raisa Nabila**
+NPM: **2408107010037**
+Program Studi: **Informatika**
+Mata Kuliah: **Pemrograman Berbasis Web**
